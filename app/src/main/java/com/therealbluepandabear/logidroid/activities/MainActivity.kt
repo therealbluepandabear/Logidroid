@@ -1,8 +1,9 @@
-package com.therealbluepandabear.logidroid
+package com.therealbluepandabear.logidroid.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.therealbluepandabear.logidroid.ui.main.MainFragment
+import com.therealbluepandabear.logidroid.R
+import com.therealbluepandabear.logidroid.fragments.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
