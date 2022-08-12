@@ -1,6 +1,5 @@
 package com.therealbluepandabear.logidroid
 
-import com.therealbluepandabear.logidroid.models.LogicalAND
 import com.therealbluepandabear.logidroid.models.LogicalNOT
 import com.therealbluepandabear.logidroid.models.UnaryGate
 import org.junit.Test
