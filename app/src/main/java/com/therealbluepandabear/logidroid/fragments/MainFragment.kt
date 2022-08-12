@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.therealbluepandabear.logidroid.databinding.FragmentMainBinding
+import com.therealbluepandabear.logidroid.models.LogicalAND
+import com.therealbluepandabear.logidroid.models.LogicGate
+import com.therealbluepandabear.logidroid.models.LogicalNOT
+import com.therealbluepandabear.logidroid.models.UnaryGate
 
 class MainFragment : Fragment() {
 
@@ -26,6 +30,9 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        val logicGate: UnaryGate = LogicalNOT()
+        binding.message.text = logicGate.performOperation(false).toString()
 
         return binding.root
     }
