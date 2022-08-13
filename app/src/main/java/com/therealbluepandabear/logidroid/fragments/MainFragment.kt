@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import com.therealbluepandabear.logidroid.customviews.LogicGateView
 import com.therealbluepandabear.logidroid.databinding.FragmentMainBinding
 import com.therealbluepandabear.logidroid.models.*
+import kotlin.math.log
 
 class MainFragment : Fragment() {
 
@@ -49,68 +50,47 @@ class MainFragment : Fragment() {
         }
     }
 
+    private fun spawnLogicGate(logicGate: LogicGate) {
+        binding.root.addView(LogicGateView(requireContext()).apply {
+            setLogicGate(logicGate)
+            setTouchListener(this)
+        })
+    }
+
+    private fun spawnLogicGate(logicGate: UnaryGate) {
+        binding.root.addView(LogicGateView(requireContext()).apply {
+            setLogicGate(logicGate)
+            setTouchListener(this)
+        })
+    }
+
     private fun setEventListeners() {
         binding.fragmentMainLogicalANDSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalAND())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalAND())
         }
 
         binding.fragmentMainLogicalNANDSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalNAND())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalNAND())
         }
 
         binding.fragmentMainLogicalNORSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalNOR())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalNOR())
         }
 
         binding.fragmentMainLogicalNOTSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalNOT())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalNOT())
         }
 
         binding.fragmentMainLogicalORSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalOR())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalOR())
         }
 
         binding.fragmentMainLogicalXNORSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalXNOR())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalXNOR())
         }
 
         binding.fragmentMainLogicalXORSpawner.setOnClickListener {
-            val view = LogicGateView(requireContext()).apply {
-                setLogicGate(LogicalXOR())
-                setTouchListener(this)
-            }
-
-            binding.root.addView(view)
+            spawnLogicGate(LogicalXOR())
         }
     }
 
