@@ -7,14 +7,57 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MainFragment">
 
-    <TextView
-        android:id="@+id/message"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MainFragment"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalAND_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="AND"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalNAND_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="NAND"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalNOR_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="NOR"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalNOT_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="NOT"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalOR_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="OR"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalXNOR_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="XNOR"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragmentMain_logicalXOR_spawner"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="XOR"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
