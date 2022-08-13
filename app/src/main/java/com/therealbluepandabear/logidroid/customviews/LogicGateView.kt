@@ -4,9 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.therealbluepandabear.logidroid.extensions.getHeight
-import com.therealbluepandabear.logidroid.extensions.getWidth
-import com.therealbluepandabear.logidroid.extensions.setEasyBounds
+import com.therealbluepandabear.logidroid.extensions.*
 import com.therealbluepandabear.logidroid.models.*
 
 class LogicGateView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
@@ -66,6 +64,6 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
             logicGate.name
         }
 
-        canvas.drawText(name, rect3.exactCenterX(), rect3.exactCenterY() - ((textPaint.descent() + textPaint.ascent()) / 2), textPaint)
+        rect3.drawCenteredText(canvas, name, textPaint)
     }
 }

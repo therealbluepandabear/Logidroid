@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
+import com.therealbluepandabear.logidroid.extensions.drawCenteredText
 import com.therealbluepandabear.logidroid.extensions.setEasyBounds
 import com.therealbluepandabear.logidroid.extensions.toBinaryInt
 
@@ -39,6 +40,6 @@ class BinaryInputView @JvmOverloads constructor(context: Context, attrs: Attribu
 
     override fun onDraw(canvas: Canvas) {
         canvas.drawRect(rect1, filledPaint)
-        canvas.drawText(binaryInput.toBinaryInt().toString(), rect1.exactCenterX(), rect1.exactCenterY() - ((textPaint.descent() + textPaint.ascent()) / 2), textPaint)
+        rect1.drawCenteredText(canvas, binaryInput.toBinaryInt().toString(), textPaint)
     }
 }

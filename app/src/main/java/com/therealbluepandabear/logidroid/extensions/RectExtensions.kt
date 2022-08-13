@@ -1,5 +1,7 @@
 package com.therealbluepandabear.logidroid.extensions
 
+import android.graphics.Canvas
+import android.graphics.Paint
 import android.graphics.Rect
 
 fun Rect.setEasyBounds(x: Int, y: Int, width: Int, height: Int) {
@@ -15,4 +17,8 @@ fun Rect.getWidth(): Int {
 
 fun Rect.getHeight(): Int {
     return bottom - top
+}
+
+fun Rect.drawCenteredText(canvas: Canvas, text: String, paint: Paint) {
+    canvas.drawText(text, exactCenterX(), exactCenterY() - ((paint.descent() + paint.ascent()) / 2), paint)
 }
