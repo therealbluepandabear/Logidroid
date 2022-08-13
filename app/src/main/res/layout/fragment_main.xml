@@ -20,43 +20,43 @@
                 android:id="@+id/fragmentMain_logicalAND_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="AND"/>
+                android:text="@string/fragmentMain_and"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalNAND_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="NAND"/>
+                android:text="@string/fragmentMain_nand"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalNOR_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="NOR"/>
+                android:text="@string/fragmentMain_nor"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalNOT_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="NOT"/>
+                android:text="@string/fragmentMain_not"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalOR_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="OR"/>
+                android:text="@string/fragmentMain_or"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalXNOR_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="XNOR"/>
+                android:text="@string/fragmentMain_xnor"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentMain_logicalXOR_spawner"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="XOR"/>
+                android:text="@string/fragmentMain_xor"/>
         </LinearLayout>
     </HorizontalScrollView>
 

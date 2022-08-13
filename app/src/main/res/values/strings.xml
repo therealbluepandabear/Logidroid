@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Logidroid</string>
+    <string name="fragmentMain_and">AND</string>
+    <string name="fragmentMain_nand">NAND</string>
+    <string name="fragmentMain_nor">NOR</string>
+    <string name="fragmentMain_not">NOT</string>
+    <string name="fragmentMain_or">OR</string>
+    <string name="fragmentMain_xnor">XNOR</string>
+    <string name="fragmentMain_xor">XOR</string>
 </resources>
