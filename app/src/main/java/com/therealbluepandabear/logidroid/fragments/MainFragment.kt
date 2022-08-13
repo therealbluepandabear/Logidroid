@@ -30,8 +30,8 @@ class MainFragment : Fragment() {
     private var dX = 0f
     private var dY = 0f
 
-    private fun setTouchListener(logicGateView: LogicGateView): View.OnTouchListener {
-        return View.OnTouchListener { _, event ->
+    private fun setTouchListener(logicGateView: LogicGateView) {
+        logicGateView.setOnTouchListener { _, event ->
             when (event.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
                     dX = logicGateView.x - event.rawX
@@ -58,7 +58,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalANDSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalAND())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -67,7 +67,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalNANDSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalNAND())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -76,7 +76,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalNORSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalNOR())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -85,7 +85,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalNOTSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalNOT())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -94,7 +94,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalORSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalOR())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -103,7 +103,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalXNORSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalXNOR())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
@@ -112,7 +112,7 @@ class MainFragment : Fragment() {
         binding.fragmentMainLogicalXORSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalXOR())
-                setOnTouchListener(setTouchListener(this))
+                setTouchListener(this)
             }
 
             binding.root.addView(view)
