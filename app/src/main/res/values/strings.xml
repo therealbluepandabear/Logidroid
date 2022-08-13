@@ -7,4 +7,6 @@
     <string name="fragmentMain_or">OR</string>
     <string name="fragmentMain_xnor">XNOR</string>
     <string name="fragmentMain_xor">XOR</string>
+    <string name="generic_0">0</string>
+    <string name="generic_1">1</string>
 </resources>

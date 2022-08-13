@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import com.therealbluepandabear.logidroid.customviews.BinaryInputView
 import com.therealbluepandabear.logidroid.customviews.LogicGateView
 import com.therealbluepandabear.logidroid.databinding.FragmentMainBinding
 import com.therealbluepandabear.logidroid.models.*
@@ -30,17 +31,17 @@ class MainFragment : Fragment() {
     private var dX = 0f
     private var dY = 0f
 
-    private fun setTouchListener(logicGateView: LogicGateView) {
-        logicGateView.setOnTouchListener { _, event ->
+    private fun setTouchListener(view: View) {
+        view.setOnTouchListener { _, event ->
             when (event.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
-                    dX = logicGateView.x - event.rawX
-                    dY = logicGateView.y - event.rawY
+                    dX = view.x - event.rawX
+                    dY = view.y - event.rawY
                 }
 
                 MotionEvent.ACTION_MOVE -> {
-                    logicGateView.y = event.rawY + dY
-                    logicGateView.x = event.rawX + dX
+                    view.y = event.rawY + dY
+                    view.x = event.rawX + dX
                 }
             }
 
@@ -59,6 +60,13 @@ class MainFragment : Fragment() {
     private fun spawnLogicGate(logicGate: UnaryGate) {
         binding.root.addView(LogicGateView(requireContext()).apply {
             setLogicGate(logicGate)
+            setTouchListener(this)
+        })
+    }
+
+    private fun spawnBinaryInput(binaryInput: Boolean) {
+        binding.root.addView(BinaryInputView(requireContext()).apply {
+            setBinaryInput(binaryInput)
             setTouchListener(this)
         })
     }
@@ -90,6 +98,14 @@ class MainFragment : Fragment() {
 
         binding.fragmentMainLogicalXORSpawner.setOnClickListener {
             spawnLogicGate(LogicalXOR())
+        }
+
+        binding.fragmentMainBinaryInputZeroSpawner.setOnClickListener {
+            spawnBinaryInput(false)
+        }
+
+        binding.fragmentMainBinaryInputOneSpawner.setOnClickListener {
+            spawnBinaryInput(true)
         }
     }
 
