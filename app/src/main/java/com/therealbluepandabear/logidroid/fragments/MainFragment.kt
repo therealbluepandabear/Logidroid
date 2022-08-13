@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import com.therealbluepandabear.logidroid.customviews.LogicGateView
 import com.therealbluepandabear.logidroid.databinding.FragmentMainBinding
 import com.therealbluepandabear.logidroid.models.*
-import kotlin.math.log
 
 class MainFragment : Fragment() {
 

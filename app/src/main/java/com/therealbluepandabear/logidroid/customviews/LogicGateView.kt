@@ -66,6 +66,6 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
             logicGate.name
         }
 
-        canvas.drawText(name, rect3.exactCenterX(), rect3.exactCenterY(), textPaint)
+        canvas.drawText(name, rect3.exactCenterX(), rect3.exactCenterY() - ((textPaint.descent() + textPaint.ascent()) / 2), textPaint)
     }
 }
