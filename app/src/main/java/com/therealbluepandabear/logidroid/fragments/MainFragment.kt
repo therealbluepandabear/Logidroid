@@ -49,12 +49,7 @@ class MainFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-
+    private fun setEventListeners() {
         binding.fragmentMainLogicalANDSpawner.setOnClickListener {
             val view = LogicGateView(requireContext()).apply {
                 setLogicGate(LogicalAND())
@@ -117,6 +112,15 @@ class MainFragment : Fragment() {
 
             binding.root.addView(view)
         }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        setEventListeners()
 
         return binding.root
     }
