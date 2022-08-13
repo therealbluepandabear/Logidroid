@@ -45,6 +45,7 @@ class MainFragment : Fragment() {
                 }
             }
 
+            view.onTouchEvent(event)
             binding.root.invalidate()
             true
         }
