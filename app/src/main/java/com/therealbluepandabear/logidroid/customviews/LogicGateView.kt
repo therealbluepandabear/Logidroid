@@ -23,7 +23,7 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
     }
 
     private val inputBRect = Rect().apply {
-        setEasyBounds(inputARect.left, inputARect.bottom + 100, inputARect.getWidth(), inputARect.getHeight())
+        setEasyBounds(inputARect.left, inputARect.bottom + 100, inputARect.width(), inputARect.height())
     }
 
     private val computerRect = Rect().apply {
@@ -36,6 +36,14 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
 
     private val inputBHitBoxRect = Rect().apply {
         setEasyBounds(0, inputBRect.centerY() - 25, 50, 50)
+    }
+
+    private val outputRect = Rect().apply {
+        setEasyBounds(computerRect.right,computerRect.centerY() - rectThickness / 2, 200, rectThickness)
+    }
+
+    private val outputHitBoxRect = Rect().apply {
+        setEasyBounds(outputRect.right,outputRect.centerY() - 50 / 2, 50, 50)
     }
 
     private val rectHitBoxPaint = Paint().apply {
@@ -80,7 +88,7 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        setMeasuredDimension(computerRect.width() + inputARect.width(), computerRect.height())
+        setMeasuredDimension(computerRect.width() + inputARect.width() + outputRect.width() + outputHitBoxRect.width(), computerRect.height())
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -91,15 +99,25 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
         canvas.drawRect(inputAHitBoxRect, rectHitBoxPaint)
         canvas.drawRect(inputBHitBoxRect, rectHitBoxPaint)
 
+        canvas.drawRect(outputRect, filledPaint)
+        canvas.drawRect(outputHitBoxRect, rectHitBoxPaint)
+
         val name = if (isUnarySet) {
             unaryGate.name
         } else {
             logicGate.name
         }
 
+        val output = if (isUnarySet) {
+            unaryGate.performOperation(inputA)
+        } else {
+            logicGate.performOperation(inputA, inputB)
+        }
+
         inputAHitBoxRect.drawCenteredText(canvas, inputA.toBinaryInt().toString(), inputTextPaint)
         inputBHitBoxRect.drawCenteredText(canvas, inputB.toBinaryInt().toString(), inputTextPaint)
         computerRect.drawCenteredText(canvas, name, labelTextPaint)
+        outputHitBoxRect.drawCenteredText(canvas, output.toBinaryInt().toString(), inputTextPaint)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

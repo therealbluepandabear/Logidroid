@@ -11,14 +11,6 @@ fun Rect.setEasyBounds(x: Int, y: Int, width: Int, height: Int) {
     bottom = height + top
 }
 
-fun Rect.getWidth(): Int {
-    return right - left
-}
-
-fun Rect.getHeight(): Int {
-    return bottom - top
-}
-
 fun Rect.drawCenteredText(canvas: Canvas, text: String, paint: Paint) {
     canvas.drawText(text, exactCenterX(), exactCenterY() - ((paint.descent() + paint.ascent()) / 2), paint)
 }
