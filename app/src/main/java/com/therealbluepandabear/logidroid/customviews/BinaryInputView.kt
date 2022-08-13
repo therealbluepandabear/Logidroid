@@ -7,11 +7,11 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
-import com.therealbluepandabear.logidroid.extensions.setB1
+import com.therealbluepandabear.logidroid.extensions.setEasyBounds
 
 class BinaryInputView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
     private val rect1 = Rect().apply {
-        setB1(0,0, 100, 100)
+        setEasyBounds(0,0, 100, 100)
     }
 
     private val filledPaint = Paint().apply {

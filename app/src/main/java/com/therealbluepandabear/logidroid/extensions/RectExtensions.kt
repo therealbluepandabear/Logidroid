@@ -2,7 +2,7 @@ package com.therealbluepandabear.logidroid.extensions
 
 import android.graphics.Rect
 
-fun Rect.setB1(x: Int, y: Int, width: Int, height: Int) {
+fun Rect.setEasyBounds(x: Int, y: Int, width: Int, height: Int) {
     left = x
     top = y
     right = width + left

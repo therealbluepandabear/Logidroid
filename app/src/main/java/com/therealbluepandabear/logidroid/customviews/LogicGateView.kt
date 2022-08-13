@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.therealbluepandabear.logidroid.extensions.getHeight
 import com.therealbluepandabear.logidroid.extensions.getWidth
-import com.therealbluepandabear.logidroid.extensions.setB1
+import com.therealbluepandabear.logidroid.extensions.setEasyBounds
 import com.therealbluepandabear.logidroid.models.*
 
 class LogicGateView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
@@ -14,15 +14,15 @@ class LogicGateView @JvmOverloads constructor(context: Context, attrs: Attribute
     private val rectThickness = 20
 
     private val rect1 = Rect().apply {
-        setB1(0,50, 200, rectThickness)
+        setEasyBounds(0,50, 200, rectThickness)
     }
 
     private val rect2 = Rect().apply {
-        setB1(rect1.left, rect1.bottom + 100, rect1.getWidth(), rect1.getHeight())
+        setEasyBounds(rect1.left, rect1.bottom + 100, rect1.getWidth(), rect1.getHeight())
     }
 
     private val rect3 = Rect().apply {
-        setB1(rect1.right, 0, 200, rect2.bottom + 50)
+        setEasyBounds(rect1.right, 0, 200, rect2.bottom + 50)
     }
 
     private val filledPaint = Paint().apply {
