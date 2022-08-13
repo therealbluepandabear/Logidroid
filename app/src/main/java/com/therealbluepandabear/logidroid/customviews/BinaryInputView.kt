@@ -8,6 +8,7 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
 import com.therealbluepandabear.logidroid.extensions.setEasyBounds
+import com.therealbluepandabear.logidroid.extensions.toBinaryInt
 
 class BinaryInputView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
     private val rect1 = Rect().apply {
@@ -38,13 +39,6 @@ class BinaryInputView @JvmOverloads constructor(context: Context, attrs: Attribu
 
     override fun onDraw(canvas: Canvas) {
         canvas.drawRect(rect1, filledPaint)
-
-        val text = if (binaryInput) {
-            "1"
-        } else {
-            "0"
-        }
-
-        canvas.drawText(text, rect1.exactCenterX(), rect1.exactCenterY() - ((textPaint.descent() + textPaint.ascent()) / 2), textPaint)
+        canvas.drawText(binaryInput.toBinaryInt().toString(), rect1.exactCenterX(), rect1.exactCenterY() - ((textPaint.descent() + textPaint.ascent()) / 2), textPaint)
     }
 }
